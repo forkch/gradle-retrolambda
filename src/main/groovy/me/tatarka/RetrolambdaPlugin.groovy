@@ -54,6 +54,10 @@ public class RetrolambdaPlugin implements Plugin<Project> {
         project.plugins.withId('com.android.library') {
             project.apply plugin: RetrolambdaPluginAndroid
         }
+        
+        project.plugins.withId('com.android.test') {
+            project.apply plugin: RetrolambdaPluginAndroid
+        }
 
         project.plugins.withType(ApplicationPlugin) {
             project.tasks.findByName('run').dependsOn('compileRetrolambda')
